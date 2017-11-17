@@ -18,7 +18,8 @@ The "issue" I faced is that I had to generate file using those tools and then up
 * This extension will not be working in Intruder as CustomTab can't be used in Intruder.
 
 ## How to use it
-* Install the burp extension "OfficeOpenXMLEditor.py".
+* Clone this repository.
+* Installed OfficeOpenXMLEditor.py via extender tab.
 * It will detect if there is any multipart POST request with OOXML Content-Type.
 * If there is, "Open Office XML tab" will be added to your request.
 * Edit the XML file and submit.

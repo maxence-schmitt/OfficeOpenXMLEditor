@@ -72,13 +72,14 @@ class OfficeOpenXMLInputTab(IMessageEditorTab):
                         try:
                             env = {'REQUEST_METHOD': 'POST','CONTENT_TYPE': 'multipart/form-data; boundary='+self._boundary,'wsgi.input': IO(request[reqInfo.getBodyOffset():])}
                             rforms, rfiles = mp.parse_form_data(env, strict=True, charset='utf8')
-                            for files in rfiles.getall('file'):
-                                print "file:"+files.name+":"+files.content_type
-                                if files.content_type in self._listOfOOXMLContentType:
-                                    self._ooxmlParam=files.name
-                                    self._ooxmlContentType=files.content_type
-                                    print "OOXML Document detected in the following parameter:" + self._ooxmlParam
-                                    break;
+                            for files in rfiles:
+                                for file in rfiles.getall(files):
+                                    print "file:"+file.name+":"+file.content_type
+                                    if file.content_type in self._listOfOOXMLContentType:
+                                        self._ooxmlParam=file.name
+                                        self._ooxmlContentType=file.content_type
+                                        print "OOXML Document detected in the following parameter:" + self._ooxmlParam
+                                        break;
                         except Exception as e:
                             print("Error: {0}".format(e))
  
