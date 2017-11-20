@@ -7,6 +7,7 @@ from burp import IParameter
 
 import json
 import tempfile
+import os
 import re
 from UpdateableZipFile import UpdateableZipFile
 import multipart as mp
