@@ -1,4 +1,5 @@
 {
 	"Content-Types": ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.presentationml.presentation"],
-	"FileToOpen" : "[Content_Types].xml"
+	"FileToOpen" : "[Content_Types].xml",
+	"tryToFindZip" : true
 }
