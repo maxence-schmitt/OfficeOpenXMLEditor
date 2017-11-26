@@ -15,8 +15,8 @@ except ImportError:
 from array import array
 from zipfile import ZipFile, ZIP_STORED, ZipInfo
 
-	
-			
+
+
 
 class BurpExtender(IBurpExtender, IMessageEditorTabFactory):
 
